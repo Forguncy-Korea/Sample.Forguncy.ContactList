@@ -730,9 +730,16 @@
     "$type": "Forguncy.Model.Pages.NormalPage, ServerDesignerCommon",
     "PageLoadedCommandList": [
       {
-        "$type": "Forguncy.Model.RunJavaScriptCommand, ServerDesignerCommon",
-        "JavaScript": "var page = Forguncy.Page; \r\n\r\ngetForguncyId = $('.maptest').attr('id');\r\n\r\nvar mapContainer = document.getElementById('getForguncyId'), // 지도를 표시할 div \r\n    mapOption = {\r\n        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표\r\n        level: 3 // 지도의 확대 레벨\r\n    };  \r\n\r\n// 지도를 생성합니다    \r\nvar map = new kakao.maps.Map(mapContainer, mapOption); \r\n\r\n// 주소-좌표 변환 객체를 생성합니다\r\nvar geocoder = new kakao.maps.services.Geocoder();\r\n\r\n// 주소로 좌표를 검색합니다\r\ngeocoder.addressSearch('제주특별자치도 제주시 첨단로 242', function(result, status) {\r\n\r\n    // 정상적으로 검색이 완료됐으면 \r\n     if (status === kakao.maps.services.Status.OK) {\r\n\r\n        var coords = new kakao.maps.LatLng(result[0].y, result[0].x);\r\n\r\n        // 결과값으로 받은 위치를 마커로 표시합니다\r\n        var marker = new kakao.maps.Marker({\r\n            map: map,\r\n            position: coords\r\n        });\r\n\r\n        // 인포윈도우로 장소에 대한 설명을 표시합니다\r\n        var infowindow = new kakao.maps.InfoWindow({\r\n            content: '<div style=\"width:150px;text-align:center;padding:6px 0;\">우리회사</div>'\r\n        });\r\n        infowindow.open(map, marker);\r\n\r\n        // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다\r\n        map.setCenter(coords);\r\n    } \r\n});    \r\n",
-        "ID": "aa7bcbfaded644818b0c69e49a8258fd"
+        "$type": "Forguncy.Model.SetRowColumnLayoutCommand, ServerDesignerCommon",
+        "PropertyItemsList": [
+          {
+            "Location": {
+              "$type": "Forguncy.Model.FormulaReferObject, ServerDesignerCommon",
+              "SerializeProperty": "=연락처_반복보기!AM:BC"
+            },
+            "Value": false
+          }
+        ]
       }
     ],
     "AuthorizeInfo": {
@@ -748,4 +755,4 @@
     "Margin": {},
     "PaperSize": {}
   }
-}//o9KOLl7npMuAS370uav8Z7oLRlBzhN4bQNhuDOxThj6/Sh0ieW1G/FiYXQciRAs4ritUhTU435ADNnC3tTxUMb6KkrgFpWHEkieVR3IMYIFKl80v20I1b3C3m5AOubAYB56lzuKfPkOHCWplur1Qqfm64T2Lk7H8TzCdJoy7eCTuKnkf/s6CEtLFUkspUZlGSwB/ZXzOa1Izc6+6nG99UvJfcJ7+6VeBeUCDKWQQW0QyraKZMHQovzgciEdTiZH4S/jdGANZdS6c8q4GadZfclRFgMgs6CHAML/tOiClYjxw7fqAl6ZgITPkOj4+CKfLcl5qVEh9oom4/hz0WSVfOidsKMGa6po84uX+AWmJt5APZ8mLenO06R4w6ytmM/sPoNZP+I3DKf0CB6E9pyiWnGoHjg+wldYDRl0r5id9Tki43mO0CNR/LSQoq63UgI0Q4+Phro0Jcr/EoO4EB1TsT4aeJirlW1c2p7ZlI6IZq5C5iZF4oylL9yl3x9M2xwZSbYFYuMqvzfpAunGdmuteqIzxkg6WQ5PIZJaawen0srmtdS4oHT2n6fX5EQ5+DRqrs0LAx0Ik+HjCLSxAwf5mVwfrzP1TW7YiA6qnfxhOy5kkmGwR+rJif3DMsLhMy+cl825eeUWwThDUR4A8T1LYgIpy+rFXtZv5kWqeoJoVaAnZUsHTRN5SSWz4jNnoATgtUHKh6gVGKKpRrDQdK3Yh9sQRimb2LZVwoG7L1Qnl/ErRvRSbEJhls5m60nE96Bzyt0mtmrHvcdDLfusOhf0Dk1oJi349DVB2WSiBHSkMEvoc6Mm5QeM8yrHwyhaWp8CH/3IcNou8ARdarh2om+AhZgkY9+4KtyO086fXIqpbhfs7XlXxx+VgmcNbo0RS0/gZM6pJFtmP3I9422+iskaDaA==|920
+}//sAujXqE7BctekSDlbm16DtJeiyFgzlL2vEWgiBpBzOxvMnklhP+WkJ/4WCOcZv68pWWyDZdQD2dTSE2CNY12F8wY+KoIoBzhw2YvluVKTPpQxexuC97fvjzV5j0JN12u2wJIcBAqoXN0vVXWJrkz478zsIzwJmF2890INN7Weu8HoEdTCNwktqAfBJpIwBGb6A+kugh5iW75HpyGDpLBXH9ojQXprdh6FK9Gv0k4rKR2WVvchsS9GPwEMToGY7dzb1gLjLbmx6QgOKHCfKiQ65RI0U3WNKz3SekdR66pBEYh8xR0dFplPfvS7Kc77bsnynV0lEe5DAMcUHapv9n/zHjFYWtK8j+c/hOUoaPnzOVtuYGc3YTwSysvzcb/fERNZN9ZYAuo29xtOqP5MrbXirHwhisL0XUD+A9WRi6X0aEG+kKueXXNMkzSxs/E9gkJ2cXNRGgkRTOK5CIyw6+x5QB/rmTUy1IeCQASKTAyXRUJ5WiYh7uIAvgER/OE4pZr/MLTgdrbQbdXkaHJbKPL8ZlB4qS0LHvP9GW6G2zZdJBLV19G2w5kWMthhzqqD9YGqbpyexrK5lFmdidfNcZ58yRW1njjx103qf0O80L7mNyEytjnsTekrN2m38jqNozqofPRwYwQsMz0yjKMDXQehYwd98e6ZDwvfyOZsKGZQTYKKvU8fZj6iNl29mr9OTpHiqk3PJh1Sd1/CQURNkSE+Y0QWnbJDV061bn2XjHuuB1jPUyTpgZ7hgtzVCU57rT4FtGrXWewF7OaXa+yBdHsX8jIu26RxL2a9uu3pcHWtG5gkCanPRx90cLj1O0tPpNqL+SKtTsLuugKf3H2jV6x0l8LyoPjkwxHRijO7X4H6WrKnZJ1BB3yuDjEeJ24t9+DVLDpBeDaSJ2hqRdVNQP3mg==|920
